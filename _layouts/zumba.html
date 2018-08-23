@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Zumba combines Latin and International music with a fun and effective workout system. With classes and instructors worldwide, anyone can Join the Party!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="application-name" content="Zumba" />
+    <meta name="msapplication-TileColor" content="#ebebeb" />
+    <!-- <meta name="msapplication-square70x70logo" content="/tiny.png" />
+    <meta name="msapplication-square150x150logo" content="/square.png" />
+    <meta name="msapplication-wide310x150logo" content="/wide.png" />
+    <meta name="msapplication-square310x310logo" content="/large.png" /> -->
+    
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <meta name="theme-color" content="#dae251">
+    <meta name="msapplication-navbutton-color" content="#dae251">
+
+    <link rel="stylesheet" type="text/css" href="https://www.zumba.com/css-blt/main-mtv.css?56fef5247a573341f26e37c839e68f76" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/zumba.css">
+    
+    <title>Worasuda Manyasthien - Instructor Page</title>
+    
+</head>
+
+<body itemscope blt-breakpoint itemtype="http://schema.org/WebPage" class="lang-en-US " ng-class="{
+			'bp-large' : breakpoints.large,
+			'bp-medium' : breakpoints.medium,
+			'bp-small' : breakpoints.small
+		}">
+	<!-- Start PageLoader !-->
+	<div class="loader" style="display: none;">
+		<div class="loaderimg"></div>
+	</div>
+	<!-- End PageLoader !-->
+	
+
+
+	<div id="layout-page-content">
+		<div class="profile-view-wrapper">
+            <div class="profile-cover" ng-controller="BackgroundPattern">
+            <!-- background -->
+            </div>
+
+<!-- desktop header -->
+            <div class="profile-header ">
+                <div class="profile-header__left">
+                    <div class="profile-header__left__content">
+                        <div class="profile-photo">
+                            <img class="profile-photo__image" src="{{site.data.amm.fbprofile}}" style="border-radius: 50%" />
+                        </div>
+                        <h1 class="name">
+                        	<div class="name__first">{{site.data.amm.fname}}</div>
+                        	<div class="name__last">{{site.data.amm.lname}}</div>
+                        </h1>
+
+                        <div class="contact">
+                            <a class="contact__wrapper contact__wrapper--email" data-reveal-id="contactInstructor">
+                                <div class="icon-mail"></div>
+                            </a>
+                            <a class="contact__wrapper contact__wrapper--facebook" href="https://facebook.com/{{site.data.setting.social.facebook}}" target="_blank">
+                                <div class="icon-facebook"></div>
+                            </a>
+                            <a class="contact__wrapper contact__wrapper--instagram" href="https://instagram.com/{{site.data.setting.social.instragram}}" target="_blank">
+                                <div class="icon-instagram"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- desktop header end -->
+
+            <div class="profile-body ">
+<!-- mobile header-->
+                <div class="show-for-small-only">
+                    <div class="panel">
+                        <h1 class="name name--mobile">
+							<div class="name__first">{{site.data.amm.fname}}</div>
+							<div class="name__last">{{site.data.amm.lname}}</div>
+						</h1>
+<!-- mobile header end -->
+
+<!-- adside mobile -->
+                        <div class="show-for-small-only">
+
+                            <div class="details read-more-wrap">
+                                <div class="details__item">
+                                    <h5 mtv-strong-hide class="details__item__label">ZIN&trade; Since</h5>
+                                    <h5 mtv-zumba-hide class="details__item__label">SYNC Since</h5>
+                                    <p class="details__item__data">{{site.data.amm.zin}}</p>
+                                </div>
+                                <div class="details__item">
+                                    <h5 class="details__item__label">Location</h5>
+                                    <p class="details__item__data">{{site.data.amm.location}}</p>
+                                </div>
+                                <div class="details__item">
+                                    <h5 class="details__item__label">Licensed to Teach</h5>
+                                    <p class="details__item__data">{{site.data.amm.teach}}</p>
+                                </div>
+                                <div class="read-more-target" ng-show="showMore" ng-cloak>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+<!-- adside end -->
+
+<!-- intro mobile -->
+                        <div class="about-me-mobile">
+                            <div class="about-me" blt-read-more="{{site.data.amm.intro}}" blt-read-more-limit="100">
+                                <p>{{site.data.amm.intro}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- intro mobile end -->
+
+<!-- video mobile -->
+                    <div class="panel">
+                    	<div class="section-header">
+                    		<h4 id="featured-photos" class="section-header__title">Videos</h4>
+                    	</div>
+
+                    	<div class="feature-gallery feature-gallery--3" media-type="video" limit="3">
+                    		<div class="feature-gallery__features features">
+                                {% for clip in site.data.amm.video %}
+
+                    			<div class="feature" ng-if="!gallery">
+                                    <a href="https://www.youtube.com/watch?v={{ clip.url }}" target="_blank"><img class="feature__media" src="{{ clip.cover }}" />
+                                    <i class="feature__play"></i></a>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <p class="section-footer">
+                            <!-- <a href="#">View all videos</a>  -->
+                        </p>
+                    </div>
+<!-- video mobile end -->
+
+<!-- upcomming mobile-->
+                    <div class="panel">
+                        <div class="section-header">
+                            <h4 class="section-header__title">Upcoming Classes</h4>
+                        </div>
+
+                        <!-- <div class="columns hide-for-small-only"> -->
+                        <div class="columns">
+                            {% for class in site.data.class %}
+                            <div class="card">
+                                <div class="card__left">
+                                    <div class="card__left__title">
+                                        <span class="card__emphasis">{{class.date}} </span>
+                                        <br> 
+                                        <br>
+                                        <span class="card__emphasis">{{class.time}} </span>
+                                    </div>
+                                    <div class="card__left__description">
+                                        <!-- <a href="{{class.type}}" target="_blank">{{class.type}}</a> -->
+                                        <b>{{class.type}}</b>
+                                        <!-- <br> {{class.location}} -->
+                                        <br>
+                                        <span class="card__left__address">{{class.location}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                
+                            <div class="read-more-trigger card--read-more">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+<!-- Music mobile -->
+                    <div class="panel" mtv-strong-hide>
+                        <div class="section-header">
+                            <h4 id="featured-music" class="section-header__title">Music that moves me</h4>
+                        </div>
+                        
+                        <div class="featured-section">
+                            <div class="slider music-slider music-slider--digest music-slider--1">
+                                <ul class="slides">
+                                {% for music in site.data.amm.music %}
+                                    <li class="music">
+                                        <div class="music__cover">
+                                            <img src="{{music.cover}}" ng-src="{{ music.src }}" />
+                                        </div>
+                                        <p class="music__label">
+                                            <span class="music__label__track" title="{{music.title}}">
+                                                {{music.title}}
+                                            </span>
+                                        </p>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+
+<!-- Licenses Education Milestones no -->
+<!--                         <div id="profileBadges" class="profile-badges hide-for-small-only">
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Licenses x</h4>
+                                </div>
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">Licensed to teach regular Zumba® classes. <div class="profile-badges--learn-more__container">
+                                        	<a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> </div>
+                                        </span>
+                                        <img src="https://d29za44huniau5.cloudfront.net/wp-content/uploads/2018/03/basic-1.svg" />
+                                    </div>
+	                                <div>
+	                                	<span class="details__item__label profile-badges__label">Zumba&reg; Basic 1</span>
+	                            	</div>
+                        		</div>
+                            </div>
+                
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Education</h4>
+                                </div>
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">Completed a Zumba® Pro Skills Training. <div class="profile-badges--learn-more__container">
+                                        	<a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/trainings/zumba_pro_skills" target="_blank">Learn More</a> </div>
+                                        </span>
+                                        <img src="https://d29za44huniau5.cloudfront.net/wp-content/uploads/2018/03/zumba-proskills.svg" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">Zumba&reg; Pro Skills</span>
+                                    </div>
+                                </div>
+                            </div>
+                                        
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Milestones</h4>
+                                </div>
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">Licensed ZIN™ Member for 2 years. <div class="profile-badges--learn-more__container">
+                                        	
+                                        </div>
+                                    </span>
+                                        <img src="https://d29za44huniau5.cloudfront.net/wp-content/uploads/2018/03/2years.svg" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">2 Year ZIN&trade;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+<!-- Licenses Education Milestones no end-->
+
+<!-- Licenses Education Milestones mobile -->
+                        <div id="profileBadges" class="profile-badges show-for-small-only">
+
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Licenses</h4>
+                                </div>
+                                {% for badge in site.data.amm.licenses %}
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">
+                                            {{badge.discription}}
+                                            <!-- <div class="profile-badges--learn-more__container">
+                                               <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> 
+                                            </div> -->
+                                        </span>
+                                        <img src="{{badge.img}}" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">{{badge.name}}</span>
+                                    </div>    
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Education</h4>
+                                </div>
+                                {% for badge in site.data.amm.education %}
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">
+                                            {{badge.discription}}
+                                            <!-- <div class="profile-badges--learn-more__container">
+                                               <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> 
+                                            </div> -->
+                                        </span>
+                                        <img src="{{badge.img}}" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">{{badge.name}}</span>
+                                    </div>    
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Milestones</h4>
+                                </div>
+
+                                {% for badge in site.data.amm.milestones %}
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">
+                                            {{badge.discription}}
+                                            <!-- <div class="profile-badges--learn-more__container">
+                                               <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> 
+                                            </div> -->
+                                        </span>
+                                        <img src="{{badge.img}}" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">{{badge.name}}</span>
+                                    </div>    
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+<!-- Licenses Education Milestones mobile end-->
+                    </div>
+                </div>
+
+<!-- desktop -->
+
+                <div class="profile-body__left hide-for-small-only">
+                    <div class="vertical-bar__left">
+    	                <h1 class="name name--mobile">
+                            <div class="name__first">{{site.data.amm.fname}}</div>
+                            <div class="name__last">{{site.data.amm.lname}}</div>
+    	                </h1>
+    	                <div class="about-me-mobile">
+                            <div class="about-me" blt-read-more="{{site.data.amm.intro}}" blt-read-more-limit="100">
+                                <p>{{site.data.amm.intro}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+<!-- desktop video -->
+                    <span blt-breakpoint ng-if="!breakpoints.small">
+						<div class="section-header">
+                            <h4 id="featured-photos" class="section-header__title">Videos</h4>
+                        </div>
+
+                        <div class="feature-gallery feature-gallery--3" media-type="video" limit="3">
+                            <div class="feature-gallery__features features">
+                                {% for clip in site.data.amm.video %}
+
+                                <div class="feature" ng-if="!gallery">
+                                    <a href="https://www.youtube.com/watch?v={{ clip.url }}" target="_blank"><img class="feature__media" src="{{ clip.cover }}" />
+                                    <i class="feature__play"></i></a>
+                                </div>
+
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <p class="section-footer">
+                            <!-- <a href="#">View all videos</a>  -->
+                        </p>
+					</span>
+
+					<hr />
+
+<!-- Music -->
+					<span mtv-strong-hide>
+						<div class="section-header">
+							<h4 id="featured-music" class="section-header__title">Music that moves me</h4>
+						</div>
+						<div class="featured-section">
+							<div class="slider music-slider music-slider--digest music-slider--1">
+								<ul class="slides">
+								{% for music in site.data.amm.music %}
+                                    <li class="music">
+                                        <div class="music__cover">
+                                            <img src="{{music.cover}}" />
+                                        </div>
+                                        <p class="music__label">
+                                            <span class="music__label__track" title="{{music.title}}">
+                                            {{music.title}} </span>
+                                            <span class="music__label__artist" title="{{music.artis}}">
+                                            {{music.artist}}</span>
+                                        </p>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <hr />
+                    </span>
+
+<!-- Licenses Education Milestones -->
+                    <div id="profileBadges" class="profile-badges hide-for-small-only">
+                        <div class="row profile-badges__container">
+                            <div class="section-header">
+                                <h4 class="section-header__title">Licenses</h4>
+                            </div>
+                            {% for badge in site.data.amm.licenses %}
+                            <div class="profile-badges__item">
+                                <div class="profile-badges__icon has-tooltip">
+                                    <span class="profile-badges__tooltip profile-badges__tooltip--format">
+                                        {{badge.discription}}
+                                        <!-- <div class="profile-badges--learn-more__container">
+                                           <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> 
+                                        </div> -->
+                                    </span>
+                                    <img src="{{badge.img}}" />
+                                </div>
+                                <div>
+                                    <span class="details__item__label profile-badges__label">{{badge.name}}</span>
+                                </div>    
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="row profile-badges__container">
+                            <div class="section-header">
+                                <h4 class="section-header__title">Education</h4>
+                            </div>
+                            {% for badge in site.data.amm.education %}
+                            <div class="profile-badges__item">
+                                <div class="profile-badges__icon has-tooltip">
+                                    <span class="profile-badges__tooltip profile-badges__tooltip--format">
+                                        {{badge.discription}}
+                                        <!-- <div class="profile-badges--learn-more__container">
+                                           <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> 
+                                        </div> -->
+                                    </span>
+                                    <img src="{{badge.img}}" />
+                                </div>
+                                <div>
+                                    <span class="details__item__label profile-badges__label">{{badge.name}}</span>
+                                </div>    
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row profile-badges__container">
+                            <div class="section-header">
+                                <h4 class="section-header__title">Milestones</h4>
+                            </div>
+
+                            {% for badge in site.data.amm.milestones %}
+                            <div class="profile-badges__item">
+                                <div class="profile-badges__icon has-tooltip">
+                                    <span class="profile-badges__tooltip profile-badges__tooltip--format">
+                                        {{badge.discription}}
+                                        <!-- <div class="profile-badges--learn-more__container">
+                                           <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> 
+                                        </div> -->
+                                    </span>
+                                    <img src="{{badge.img}}" />
+                                </div>
+                                <div>
+                                    <span class="details__item__label profile-badges__label">{{badge.name}}</span>
+                                </div>    
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+    <!-- show-for-small-only  -->
+                        <!-- <div id="profileBadges" class="profile-badges show-for-small-only">
+    
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Licenses</h4>
+                                </div>
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">Licensed to teach regular Zumba® classes. 
+                                            <div class="profile-badges--learn-more__container">
+                                            <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Learn More</a> </div>
+                                        </span>
+                                        <img src="https://d29za44huniau5.cloudfront.net/wp-content/uploads/2018/03/basic-1.svg" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">Zumba&reg; Basic 1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Education</h4>
+                                </div>
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">Completed a Zumba® Pro Skills Training. 
+                                            <div class="profile-badges--learn-more__container">
+                                                <a class="profile-badges--learn-more" href="https://www.zumba.com/en-US/trainings/zumba_pro_skills" target="_blank">Learn More</a> 
+                                            </div>
+                                        </span>
+                                        <img src="https://d29za44huniau5.cloudfront.net/wp-content/uploads/2018/03/zumba-proskills.svg" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">Zumba&reg; Pro Skills</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row profile-badges__container">
+                                <div class="section-header">
+                                    <h4 class="section-header__title">Milestones</h4>
+                                </div>
+                                <div class="profile-badges__item">
+                                    <div class="profile-badges__icon has-tooltip">
+                                        <span class="profile-badges__tooltip profile-badges__tooltip--format">Licensed ZIN™ Member for 2 years. <div class="profile-badges--learn-more__container"></div></span>
+                                        <img src="https://d29za44huniau5.cloudfront.net/wp-content/uploads/2018/03/2years.svg" />
+                                    </div>
+                                    <div>
+                                        <span class="details__item__label profile-badges__label">2 Year ZIN&trade;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                    </div>
+
+
+                    <div class="profile-body__right hide-for-small-only">
+<!-- aside desktop-->
+                        <div class="details hide-for-small-only">
+                            <div class="details__item">
+                                <h5 mtv-strong-hide class="details__item__label">ZIN&trade; Since</h5>
+                                <h5 mtv-zumba-hide class="details__item__label">SYNC Since</h5>
+                                <p class="details__item__data">{{site.data.amm.zin}}</p>
+                            </div>
+                            <div class="details__item">
+                                <h5 class="details__item__label">Location</h5>
+                                <p class="details__item__data">{{site.data.amm.location}}</p>
+                            </div>
+                            <div class="details__item">
+                                <h5 class="details__item__label">Licensed to Teach</h5>
+                                <p class="details__item__data">{{site.data.amm.teach}}</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="show-for-small-only">
+                            <div class="details read-more-wrap">
+                                <div class="details__item">
+                                    <h5 mtv-strong-hide class="details__item__label">ZIN&trade; Since</h5>
+                                    <h5 mtv-zumba-hide class="details__item__label">SYNC Since</h5>
+                                    <p class="details__item__data">{{site.data.amm.zin}}</p>
+                                </div>
+                                <div class="details__item">
+                                    <h5 class="details__item__label">Location</h5>
+                                    <p class="details__item__data">Hua Hin, Prachuap Khiri Khan</p>
+                                </div>
+                                <div class="details__item">
+                                    <h5 class="details__item__label">Licensed to Teach</h5>
+                                    <p class="details__item__data">
+                                        <a href="https://www.zumba.com/en-US/party/classes/class-zumba-fitness" target="_blank">Zumba</a> </p>
+                                </div>
+                                <div class="read-more-target" ng-show="showMore" ng-cloak>
+                                </div>
+                            </div>
+                        </div> -->
+                        <hr />
+
+<!-- class desktop -->
+                        <div class="section-header">
+                            <h4 class="section-header__title">Upcoming Classes</h4>
+                        </div>
+                        <div class="columns hide-for-small-only">
+                            
+                            {% for class in site.data.class %}
+                            <div class="card" ng-show="true">
+                                <div class="card__left">
+                                    <div class="card__left__title">
+                                        <span class="card__emphasis">
+                                        {{class.date}}</span>
+                                        <br> 
+                                        <br>
+                                        <span class="card__emphasis">
+                                        {{class.time}} </span>
+                                    </div>
+                                    <div class="card__left__description">
+                                        <!-- <a href="{{class.type}}" target="_blank">{{class.type}}</a> -->
+                                        <b>{{class.type}}</b>
+                                        <br>
+                                        <span class="card__left__address">
+                                            {{class.location}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div class="read-more-trigger card--read-more" ng-click="showMobileClasses = !showMobileClasses" ng-bind="showMobileClasses ? 'View less' : 'View more' ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+<!-- footer -->
+
+<!-- <footer class="global-footer">
+    <div class="gf-footer-nav ">
+        <div class="row">
+            <div class="medium-6 large-7 columns right"> -->
+            	<!-- social -->
+<!--                 <aside class="gf-social">
+                    <h3 class="gf-footer-nav-title gf-social-title hide-for-small">Let's Be Friends</h3>
+                    <nav class="gf-social-wrapper">
+                        <a href="//facebook.com/zumba" target="_blank" class="gf-social-icon gf-social-facebook">Facebook</a>
+                        <a href="//twitter.com/zumba" target="_blank" class="gf-social-icon gf-social-twitter">Twitter</a>
+                        <a href="//pinterest.com/zumba/" target="_blank" class="gf-social-icon gf-social-pinterest">Pinterest</a>
+                        <a href="//plus.google.com/107848490576704621740/posts" target="_blank" class="gf-social-icon gf-social-google-plus">Google +</a>
+                        <a href="//youtube.com/zumba" target="_blank" class="gf-social-icon gf-social-youtube">YouTube</a>
+                        <a href="//instagram.com/zumba" target="_blank" class="gf-social-icon gf-social-instagram">Instagram</a>
+                    </nav>
+                </aside> -->
+
+                <!-- email -->
+<!--                 <aside class="gf-email-subscribe" ng-controller="NewsletterSignupController">
+                    <h3 class="gf-footer-nav-title gf-email-subscribe-title">GET THE LATEST ZUMBA NEWS, PROMOS & EVENTS.</h3>
+                    <form class="gf-email-subscribe-form" name="newsletterForm" ng-submit="submit($event)">
+                        <div class="gf-email-subscribe-success" ng-show="success" ng-cloak>
+                            <span>Thanks for Joining!</span>
+                        </div>
+                        <div class="input-wrapper" ng-hide="success">
+                            <input type="email" name="email" class="gf-email-subscribe-input" required placeholder="Enter your email" ng-model="subscriber.email">
+                            <button class="gf-email-subscribe-button" type="submit" ng-disabled="subscriber.email === ''">Join</button>
+                        </div>
+                        <p class="gf-unsubscribe-notice">You can unsubscribe at any time.</p>
+                    </form>
+                </aside>
+
+                <aside class="brands">
+                    <p>
+                        Our brands:
+                    </p>
+                    <a href="//zumba.com" title="Zumba"><span class="brand-zumba">Zumba<sup>&reg;</sup></span></a>
+                    <a href="//strongbyzumba.com" title="Strong by Zumba®" target="_blank"><span class="brand-strong">Strong by Zumba<sup>&reg;</sup></span></a>
+                </aside>
+            </div>
+
+            <div class="columns medium-6 large-5">
+                <div class="columns">
+                    <nav class="gf-footer-nav-set hide-for-small-only">
+                        <h3 class="gf-footer-nav-title">Classes</h3>
+                        <ul class="gf-footer-nav-list">
+                            <li class="gf-footer-nav-item">
+                                <a class="gf-footer-nav-link" href="/en-US/party">About our Classes </a>
+                            </li>
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/party/nearMe" blt-party-add-current-date-link class="gf-footer-nav-link">Find a Class</a>
+                            </li>
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/event/nearMe" class="gf-footer-nav-link">Find an Event</a>
+                            </li>
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/instructor" class="gf-footer-nav-link">Find an Instructor </a>
+                            </li>
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/become-a-zumba-instructor" class="gf-footer-nav-link">Become an Instructor </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="gf-footer-nav-set hide-for-small-only">
+                        <h3 class="gf-footer-nav-title">Instructors</h3>
+                        <ul class="gf-footer-nav-list">
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/login?loginLink=true&redirect=%2Fen-US%2Fprofile%2Fworasuda-manyasthien%2F1403599" class="gf-footer-nav-link">Sign in as a ZIN<sup>&trade;</sup> </a>
+                            </li>
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/training" class="gf-footer-nav-link">Find Training </a>
+                            </li>
+                            <li class="gf-footer-nav-item">
+                                <a href="/en-US/member-benefits" class="gf-footer-nav-link">Zumba<sup>&reg;</sup> Instructor Network Benefits </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer> -->
+
+
+<section class="mtv-global-footer" ng-class="{'ftr-acc-open': ftrAccOpen}">
+    <!-- logo  -->
+    <svg class="mtv-zumbito" width="32px" height="32px" viewBox="0 0 1280 1280" version="1.1" 
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xml:space="preserve" xmlns:serif="http://www.serif.com/" 
+    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+        <style type="text/css">
+        .st0 {
+            fill: #FFFFFF;
+        }
+        </style>
+            <g transform="matrix(3.7477,0,0,3.7477,-2295.44,34.3182)">
+                <g class="st0" transform="matrix(1.81971,0,0,5.95953,-986.177,-2459.52)">
+                    <path d="M994.166,437.85L964.326,437.85L921.399,461.213L994.166,437.85Z" />
+                </g>
+                <g class="st0" transform="matrix(1.81971,0,0,1.81971,-1256.34,-143.016)">
+                    <path d="M1080.2,174.737L1106.25,160.947L1142.63,160.947L1115.65,174.737L1080.2,174.737" />
+                </g>
+                <g class="st0" transform="matrix(2.16104,0,0,7.0774,-1297.52,-3064.71)">
+                    <path d="M994.166,437.85L964.326,437.85L994.166,466.225L1024.01,466.225L994.166,437.85Z" />
+                </g>
+                <g class="st0" transform="matrix(2.16104,0,0,7.0774,-1297.52,-3064.71)">
+                    <path d="M994.166,437.85L964.326,437.85L928.638,457.747L958.478,457.747L994.166,437.85Z" />
+                </g>
+                <g class="st0" transform="matrix(2.16104,0,0,7.0774,-1369.25,-3064.71)">
+                    <path d="M994.166,437.85L987.463,437.85L934.907,466.225L941.61,466.225L994.166,437.85Z" />
+                </g>
+            </g>
+    </svg>
+
+    <ul class="gf-links">
+        <li>
+            <!-- <a href="/support/policy/privacy">Privacy Policy </a> -->
+        </li>
+        <li>
+            <!-- <a href="/trademark">Trademark </a> -->
+        </li>
+    </ul>
+
+        <div class="gf-copyright">
+            <span class="gf-footer-nav-mobile-title" ng-click="footerListVisible = !footerListVisible" ng-class="{ 'gf-footer-nav-mobile-title-is-list-open' : footerListVisible }"></span>
+            <p>
+                &copy; Copyright 2018 Fit with Ammo
+            </p>
+            <!-- <span class="flag-only icon-th"></span> -->
+            
+</section>
+<a class="exit-off-canvas"></a>
+</div>
+</div>
+
+</body>
+
+</html>

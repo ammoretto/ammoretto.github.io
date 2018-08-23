@@ -1,0 +1,58 @@
+fname: Worasuda
+lname: Manyasthien
+fbprofile: https://graph.facebook.com/295011854260420/picture?type=large
+zin: Jul 2016
+strong: Jul 2018
+piloxing: Jul 2017
+location: "Hua Hin, Prachuap Khiri Khan X"
+teach: "Zumba, Strong by zumba, Piloxing"
+
+intro: "Hello! I&#039;m Worasuda Manyasthien, and I live in Hua Hin, Prachuap Khiri Khan. I&#039;ve been a ZIN&trade; Member since Jul 2016 and I absolutely love teaching Zumba classes. The reason is simple: Every class feels like a party! I am currently licensed to teach Zumba. Come join me, I guarantee you will have a blast! Got questions, don&#039;t hesitate to drop me a message!"
+
+video:
+  - video:
+    title: a
+    url: VI1FM0TlrLo
+    cover: https://img.youtube.com/vi/VI1FM0TlrLo/0.jpg
+  - video:
+    title: b
+    url: G8pQJQKEuG8
+    cover: https://img.youtube.com/vi/G8pQJQKEuG8/0.jpg
+  - video:
+    title: c
+    url: 59BQv3cOC9U
+    cover: https://img.youtube.com/vi/59BQv3cOC9U/0.jpg
+
+music:
+  - song:
+    title: "Si Una Vez - (If I Once)[Spanglish Version]"
+    artist: "Play-N-Skillz"
+    cover: https://i.scdn.co/image/9e9457fd1bbd03ea71cf2abb975fc9255283baed
+    url: music.related.media[0].name
+
+licenses:
+  - badges:
+    name: "Zumba&reg; Basic 1"
+    img: "/assets/images/basic-1.svg"
+    discription: "Licensed to teach regular Zumba® classes."
+education:
+  - badges:
+    name: "Zumba&reg; Pro Skills"
+    img: "/assets/images/zumba-proskills.svg"
+    discription: "Completed a Zumba® Pro Skills Training."
+milestones:
+  - badges:
+    name: "1 Year ZIN&trade;"
+    img: "/assets/images/1years.svg"
+    discription: "Licensed ZIN™ Member for 1 years."
+  - badges:
+    name: "2 Year ZIN&trade;"
+    img: "/assets/images/2years.svg"
+    discription: "Licensed ZIN™ Member for 2 years."
+
+
+CLASSES:
+  type:
+  date:
+  time:
+  location:
