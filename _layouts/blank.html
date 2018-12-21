@@ -1,0 +1,45 @@
+<html lang="en">
+
+	{% include head.html %}
+
+<body>
+
+	<!-- Start PageLoader !-->
+	<div class="loader" style="display: none;">
+		<div class="loaderimg"></div>
+	</div>
+	<!-- End PageLoader !-->
+
+	<div id="background" class="mouse-bg" style=""></div>
+	<!--Start Pattern & Darker Background Effects!-->
+	<div class="bgdark"></div>
+	<div class="bgpattern"></div>
+	<!--End Pattern & Darker Background Effects!-->
+
+
+
+<!--Home Page Begins Here !-->
+<div id="home-page" style="display: block;">
+	<div id="home-screen">
+		<div class="containerhome animated">
+			<!-- <div class="container animated"> -->
+				<img src="{{page.img}}" height="50%">
+				<div style="float: right; padding: 5em"><h1>{{ page.title }}</h1>
+				{{ page.content }}
+				</div>
+			<!-- </div> -->
+
+		</div>
+
+	</div>
+</div>
+<!--Home Page Ends Here!-->
+
+
+
+
+{% include footer.html %}
+
+
+
+</body></html>
